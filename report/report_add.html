@@ -1,0 +1,123 @@
+<html lang="en" xmlns:wb="http://open.weibo.com/wb" data-dpr="1" style="font-size: 37.5px;">
+<head>
+    <title>微算面相</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../statics/css/mui.picker.min.css">
+    <link rel="stylesheet" href="../statics/css/report/base.css">
+    <link rel="stylesheet" href="../statics/css/report/report_add.css">
+</head>
+<body iclicash_checked="true" style="font-size: 12px;">
+<div id="app">
+    <div data-v-5cd2d555="" class="add-reportlist">
+        <div data-v-5cd2d555="" class="add-reportlist__title app-showtitle css152a2e40fc18039 web-font">
+            添加<span class="report_title_after">占星报告</span>
+        </div>
+        <div data-v-5cd2d555="" class="add-reportlist__list">
+            <div data-v-5cd2d555="" class="add-reportlist__list-name">
+                昵称
+                <span>
+                     <input type="text" class="mui-input-password" placeholder="请输入昵称">
+                </span>
+            </div>
+        </div>
+        <div data-v-5cd2d555="" class="add-reportlist__list">
+            <div data-v-5cd2d555="" class="add-reportlist__list-name">
+                性别
+                <span>
+                    <input type="text" class="mui-input-password" placeholder="请选择性别" id="sex" readonly="readonly">
+                </span>
+            </div>
+        </div>
+        <div data-v-5cd2d555="" class="add-reportlist__list">
+            <div data-v-5cd2d555="" class="add-reportlist__list-name">
+                生日
+                <span>
+                    <input type="text" class="mui-input-password" placeholder="请选择出生日期" id="birth_date" readonly="readonly">
+                </span>
+            </div>
+        </div>
+        <div data-v-5cd2d555="" class="add-reportlist__list">
+            <div data-v-5cd2d555="" class="add-reportlist__list-name">
+                籍贯
+                <span>
+                        <input type="text" class="mui-input-password" placeholder="请选择出生城市" id="birth_city" readonly="readonly">
+                    </span>
+            </div>
+        </div>
+        <!---->
+        <div data-v-5cd2d555="" class="report-click">
+            <div data-v-5cd2d555="" class="report-click-picblack">
+                <img data-v-5cd2d555="" src="../statics/images/svg/icon_font_add_white.svg" alt="" />
+            </div>
+            <div data-v-5cd2d555="" class="report-click-money">
+                <p data-v-5cd2d555="">添加</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../statics/js/style.js"></script>
+<script src="../statics/js/mui.min.js"></script>
+<script src="../statics/js/mui.picker.min.js"></script>
+<script src="../statics/js/city.data-3.js"></script>
+<script src="../statics/js/jquery-1.11.3.min.js"></script>
+<script>
+
+    $(function () {
+        var sexPicker = new mui.PopPicker();
+        var datePicker = new mui.DtPicker();
+        var cityPicker = new mui.PopPicker({
+            layer: 3
+        });
+
+        function closePicker(){
+            sexPicker.hide()
+            datePicker.hide()
+            cityPicker.hide()
+        }
+
+        //设置性别选择器
+        sexPicker.setData([{
+            value: 'F',
+            text: '男'
+        }, {
+            value: 'M',
+            text: '女'
+        }]);
+
+        $("#sex").click(function () {
+            closePicker();
+
+            var $this = $(this)
+            sexPicker.show(function(items) {
+                $this.val(items[0].text)
+            });
+        })
+
+        // 设置日期选择器
+        var $mui_dtpicker = $(".mui-dtpicker").hide()
+        $("#birth_date").click(function () {
+            $mui_dtpicker.show()
+            closePicker();
+            var $this = $(this)
+            datePicker.show(function(rs) {
+                $this.val(rs.text)
+                $mui_dtpicker.hide()
+            });
+        })
+
+        // 设置城市选择器
+        cityPicker.setData(cityData3);
+        $("#birth_city").click(function () {
+            closePicker();
+
+            var $this = $(this)
+            cityPicker.show(function(items) {
+                $this.val(items[0].text + ' ' + items[1].text + ' '+items[2].text)
+            });
+        })
+    })
+</script>
+</body>
+</html>

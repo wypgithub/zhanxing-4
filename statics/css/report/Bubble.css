@@ -1,0 +1,92 @@
+.tagcloud {
+  position: relative;
+}
+.tagcloud a {
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.3rem;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+.b01{
+    left: 3.1rem;
+    top: 2rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 0.6rem;
+    background-color: #3b5a9a;
+}
+.b02{
+    left: 5.3rem;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.25rem;
+    line-height: 0.3rem;
+    background: #487ca3;
+}
+.b03{
+    left: 1.8rem;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.2rem;
+    line-height: 0.3rem;
+    background: #60c6bb;
+}
+.b04{
+    left: 1rem;
+    top: 3rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    line-height: 0.3rem;
+    font-size: 0.2rem;
+    background: #487ca3;
+}
+.b05{
+    left: 6rem;
+    top: 3rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    line-height: 0.3rem;
+    font-size: 0.2rem;
+    background: #60c6bb;
+}
+.b06{
+    left: 5rem;
+    top: 4rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    line-height: 0.3rem;
+    font-size: 0.2rem;
+    background: #60c6bb;
+}
+.b07{
+    left: 0.5rem;
+    top: 1rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    background: #82b2d8;
+}
+.b08{
+    left: 7rem;
+    top: 2rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    background: #82b2d8;
+}
+.b09{
+    left: 2.4rem;
+    top: 3.8rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    background: #82b2d8;
+}

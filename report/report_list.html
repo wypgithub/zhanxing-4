@@ -1,0 +1,84 @@
+<html lang="en" xmlns:wb="http://open.weibo.com/wb" data-dpr="1" style="font-size: 37.5px;">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <title>微算面相</title>
+    <link rel="stylesheet" href="../statics/css/mui.picker.min.css">
+    <link rel="stylesheet" href="../statics/css/mui.min.css">
+    <link rel="stylesheet" href="../statics/css/report/report_list.css">
+</head>
+<body iclicash_checked="true" style="font-size: 12px;">
+<div id="app">
+    <div data-v-5cd2d555="" class="add-reportlist">
+        <div data-v-5cd2d555="" class="add-reportlist__title app-showtitle css152a2e40fc18039">
+            我添加的报告
+        </div>
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-right mui-disabled">
+                    <a class="mui-btn mui-btn-red">删除</a>
+                </div>
+                <div class="mui-slider-handle">
+                    <a class="mui-navigate-right">面相报告1</a>
+                </div>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-right mui-disabled">
+                    <a class="mui-btn mui-btn-red">删除</a>
+                </div>
+                <div class="mui-slider-handle">
+                    <a class="mui-navigate-right">面相报告2</a>
+                </div>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-right mui-disabled">
+                    <a class="mui-btn mui-btn-red">删除</a>
+                </div>
+                <div class="mui-slider-handle">
+                    <a class="mui-navigate-right">面相报告3</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="vux-x-dialog dialog-demo">
+        <div class="weui-mask" style="display: none;"></div>
+        <div class="weui-dialog" style="display: none;">
+            <div class="app-err">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../statics/js/style.js"></script>
+<script src="../statics/js/mui.min.js"></script>
+<script src="../statics/js/mui.min.js"></script>
+<script src="../statics/js/jquery-1.11.3.min.js"></script>
+<script>
+    $('.mui-slider-handle').click(function () {
+        location.href = 'report.html'
+    })
+    $('.report-click-picblack').click(function () {
+        var $reportList = $('.add-reportlist__list');
+        if($reportList.length === 0){
+            return
+        }
+        if($reportList.length === 1){
+            $('.report-click').hide()
+        }
+        $reportList[$reportList.length-1].remove()
+    })
+
+    $('.mui-btn').click(function () {
+       $(this).parents('li').remove()
+    })
+
+
+
+
+</script>
+</body>
+</html>
