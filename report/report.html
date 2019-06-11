@@ -195,6 +195,26 @@
             </div>
             <div data-v-262cfda6="" class="result-features--box">
                 <div data-v-30a778e2="" data-v-262cfda6="" class="result-features">
+                    <div id="chart_div" class="chart_div"></div>
+                    <div class="content_div">
+                        <div data-v-1293da50="" class="result-imgcard__top">
+                            星盘格局：土相 + 水相
+                        </div>
+                        <div data-v-1293da50="" class="text-align-left">
+                           总体：
+                        </div>
+                        <div data-v-1293da50="" class="result-imgcard__bot">
+                            嘴唇代表口福和交际，嘴唇适中不容易有肥胖、肠胃等问题，因为食欲保持节制，
+                            辛辣酸甜有节制，不会对身体造成太大的压力，会有一个轻松的身体，交际方面不会有很多认识的人
+                        </div>
+                        <div data-v-1293da50="" class="text-align-left">
+                            最高元素分析：
+                        </div>
+                        <div data-v-1293da50="" class="result-imgcard__bot">
+                            嘴唇代表口福和交际，嘴唇适中不容易有肥胖、肠胃等问题，因为食欲保持节制，
+                            辛辣酸甜有节制，不会对身体造成太大的压力，会有一个轻松的身体，交际方面不会有很多认识的人
+                        </div>
+                    </div>
                     <div class="tagcloud">
                         <a class="b01" href="#">
                             <p>★★★★</p>
@@ -272,8 +292,124 @@
     </div>
 </div>
 <script src="../statics/js/style.js"></script>
+<script src="../statics/js/echarts.min.js"></script>
 <script src="../statics/js/jquery-1.11.3.min.js"></script>
 <script>
+    var myChart = echarts.init(document.getElementById('chart_div'));
+    var option = {
+        title: {
+            text: '星盘元素格局图',
+            left: 'center'
+        },
+        series : [
+            {
+                type: 'pie',
+                startAngle:135,
+                radius : '65%',
+                label:{
+                    position: 'inner',
+                    fontSize:15
+                },
+                labelLine:{
+                    normal:{
+                        show:true
+                    },
+                    length:50,
+                    length2:20,
+                    ineStyle:{
+                        color:'#43628e'
+                    }
+                },
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                itemStyle : {
+                    normal : {
+                        label : {
+                            position : 'inner',
+                            formatter : function (params){
+                                return (params.percent - 0) + '%';
+                                },
+                            textStyle: {
+                                color: '#ffffff'
+                            }
+                        },
+                        labelLine : {
+                            show : false
+                        }
+                    }
+                },
+                data:[
+                    {value:25,name: '幽州',
+                        itemStyle: {
+                            color:'#43628e'
+                        }
+                     },
+                    {value:25,name: '荆州',
+                        itemStyle: {
+                            color:'#5592a4'
+                        }
+                    },
+                    {value:15,name: '兖州',
+                        itemStyle: {
+                            color:'#60c6bb'
+                        }
+                    },
+                    {value:35,name: '西凉',
+                        itemStyle: {
+                            color:'#3a5a9a'
+                        }
+                    }
+                ]
+            },
+            {
+                type: 'pie',
+                center: ['50%', '50%'],
+                startAngle:135,
+                radius : '65%',
+                label:{
+                    position: 'outside'
+                },
+                labelLine:{
+                    normal:{
+                        show:true
+                    },
+                    length:50,
+                    length2:20,
+                    ineStyle:{
+                        color:'#43628e'
+                    }
+                },
+                selectedMode: 'single',
+
+                data:[
+                    {value:25,name: '水元素',
+                        itemStyle: {
+                            color:'#43628e'
+                        }
+                    },
+                    {value:25,name: '土元素',
+                        itemStyle: {
+                            color:'#5592a4'
+                        }
+                    },
+                    {value:15,name: '火元素',
+                        itemStyle: {
+                            color:'#60c6bb'
+                        }
+                    },
+                    {value:35,name: '风元素',
+                        itemStyle: {
+                            color:'#3a5a9a'
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+
+
    $('.result-detail__submit').click(function () {
        location.href = 'report_unlock.html'
    })

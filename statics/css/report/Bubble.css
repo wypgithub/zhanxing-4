@@ -1,5 +1,6 @@
 .tagcloud {
-  position: relative;
+    position: relative;
+    height: 6rem;
 }
 .tagcloud a {
     position: absolute;
